@@ -111,9 +111,79 @@ function includeword2(chain,word){
     re
 }
 
-console.log(includeword3("chody is a beautiful cat, i love chody","chody"));
+//console.log(includeword3("chody is a beautiful cat, i love chody","chody"));
 
 /**
  * delete word  in a chain
  */
 
+
+
+// GENERATE A RANDOM NUMBER BETWEEN 501 AND 600
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+//console.log(getRndInteger(501,600));
+
+
+const capicua = (number)=>{
+    let number2 = number.toString().split("").reverse().join("");
+    return number == number2;
+}
+//console.log(capicua(5654));
+
+
+// generate factotial number
+const factorial = (number)=>{
+    let result = 1;
+    for (let i = 1;i <= number;i++){
+        result *= i;
+    }
+    return result;
+}
+//console.log(factorial(10));
+
+
+//number prime 
+const Primo = (number =undefined)=>{
+    if(number===undefined)return console.warn("number is empty");
+    if(Math.sign(number)==-1)return console.error("number is negative");
+    if(number===0)return console.error("number isn't 0");
+    if(number===1)return console.error("number isn't 1");
+    let divisible= false;
+
+    for (let i =2 ; i<number; i++){
+        if(number % i === 0){
+            divisible = true;
+            break;
+        }
+    }
+        return (divisible)
+        ?console.log(" no es primo")
+        :console.log(" es primo");
+}
+
+//verificar si un numero es par o no
+
+const par= (number=undefined)=>{
+    if(number===undefined)return console.warn("number is empty");
+    if (typeof number !== "number") return console.error("digit isn't a number ")
+    if(number%2  === 0) return console.info(true);
+    return console.info(false);
+}
+
+// convert to celcius a faremheit
+
+const temperature =(grados=undefined, unidad=undefined)=>{
+    if(grados===undefined || unidad === undefined)return console.warn("grados or unidad isn't empty");
+
+    if(unidad.toUpperCase() === 'F'){
+        return grados= (grados*(9/5) +32);
+    } 
+    if(unidad.toUpperCase() === 'C'){
+        return  grados= (grados-32)*(5/9) ;
+    } 
+    
+}
+
+console.info(temperature(2,"F"))
